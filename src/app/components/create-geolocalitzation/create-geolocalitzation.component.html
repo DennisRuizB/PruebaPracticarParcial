@@ -1,0 +1,26 @@
+<div>
+    <form [formGroup]="geolocalizationForm" (ngSubmit)="onSubmit()">
+      <label for="shopName">Shop Name:</label>
+      <input id="shopName" formControlName="shopName" type="text" />
+      <div *ngIf="geolocalizationForm.get('shopName')?.invalid && geolocalizationForm.get('shopName')?.touched">
+        <small *ngIf="geolocalizationForm.get('shopName')?.errors?.['required']">Shop Name is required.</small>
+      </div>
+
+      <label for="positionX">Position X:</label>
+      <input id="positionX" formControlName="positionX" type="number" />
+      <div *ngIf="geolocalizationForm.get('positionX')?.invalid && geolocalizationForm.get('positionX')?.touched">
+        <small *ngIf="geolocalizationForm.get('positionX')?.errors?.['required']">Position X is required.</small>
+        <small *ngIf="geolocalizationForm.get('positionX')?.errors?.['pattern']">Position X must be a valid number.</small>
+      </div>
+
+      <label for="positionY">Position Y:</label>
+      <input id="positionY" formControlName="positionY" type="text" />
+      <div *ngIf="geolocalizationForm.get('positionY')?.invalid && geolocalizationForm.get('positionY')?.touched">
+        <small *ngIf="geolocalizationForm.get('positionY')?.errors?.['required']">Position Y is required.</small>
+        <small *ngIf="geolocalizationForm.get('positionY')?.errors?.['pattern']">Position Y must be a valid number.</small>
+      </div>
+
+      <button type="submit" class="btn btn-secondary"  [disabled]="geolocalizationForm.invalid">Save</button>    
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+    </form>
+  </div>

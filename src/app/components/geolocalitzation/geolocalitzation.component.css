@@ -4,6 +4,7 @@ table {
     margin: 0; /* Eliminar margen superior */
     font-size: 1rem;
     text-align: left;
+    margin-bottom: 20px;
   }
   
   thead {
@@ -83,4 +84,69 @@ table {
   .inactive {
     background-color: rgba(255, 0, 0, 0.558);
   }
+  .full-size-button {
+    width: 100%;
+    height: 100%;
+  }
+
   
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.form-group input[type="checkbox"] {
+  margin-left: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
+
+  button {
+    background: #007BFF;
+    color: white;
+    padding: 0.7rem;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+}
+/* Mensajes de error */
+small {
+  color: red; /* Cambia el color del texto a rojo */
+  font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+  font-weight: bold; /* Haz que el texto sea más destacado */
+  margin-top: 0.25rem; /* Añade un pequeño margen superior */
+  display: block; /* Asegura que el mensaje ocupe toda la línea */
+  font-family: 'Press Start 2P', cursive; /* Aplica la fuente pixel art */
+}
+
+.custom-dialog-container {
+  max-width: 800px; /* Ancho máximo */
+  width: 90%; /* Ancho relativo */
+  height: auto; /* Altura automática */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+}

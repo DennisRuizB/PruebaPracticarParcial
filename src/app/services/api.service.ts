@@ -70,6 +70,14 @@ export class ApiService {
   getAllGeolocalitzations(): Observable<any>{
     return this.http.get<any>(`${this.apiUrl}/geolocalitzations`);
   }
+
+  postGeolocalitzation(geolocalitzation:any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/geolocalitzations`, geolocalitzation);
+  }
+
+  deleteGeolocalitzation(id:string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/geolocalitzations/${id}`);
+  }
   // getUserData(): Observable<any> {
   //   const token = localStorage.getItem('token');
   //   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);

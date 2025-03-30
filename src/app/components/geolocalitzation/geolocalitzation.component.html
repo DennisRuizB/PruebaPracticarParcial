@@ -1,20 +1,33 @@
-<p>Geolocalization works!</p>
+<p style="font-family: 'Press Start 2P', cursive;">Geolocalization works!</p>
 
 <table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Shop Name</th>
-      <th>Position X</th>
-      <th>Position Y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let geolocalitzation of geolocalitzations"(click)="showUsersOfGeolocalitzation(geolocalitzation._id,geolocalitzation.userWithOrders)">
-      <td>{{ geolocalitzation._id }}</td>
-      <td>{{ geolocalitzation.shopName }}</td>
-      <td>{{ geolocalitzation.positionX }}</td>
-      <td>{{ geolocalitzation.positionY }}</td>
-    </tr>
-  </tbody>
-</table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Shop Name</th>
+        <th>Position X</th>
+        <th>Position Y</th>
+        <th>Button</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let geolocalitzation of geolocalitzations" (click)="showUsersOfGeolocalitzation(geolocalitzation._id,geolocalitzation.userWithOrders)">
+        <td>{{ geolocalitzation._id }}</td>
+        <td>{{ geolocalitzation.shopName }}</td>
+        <td>{{ geolocalitzation.positionX }}</td>
+        <td>{{ geolocalitzation.positionY }}</td>
+        <td (click)="$event.stopPropagation()">
+          <button class="full-size-button" (click)="onDeleteItem(geolocalitzation._id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div>
+    <button class="full-size-button" (click)="openGeolocalitzationModal()">Create Geolocalization</button>
+  </div>
+ 
+
+
+  

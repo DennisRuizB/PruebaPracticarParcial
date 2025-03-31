@@ -1,0 +1,34 @@
+<div class="create-friend-modal-container">
+    <h2>Crear Nueva FriendReq</h2>
+    <form [formGroup]="createFriendForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="userId">UserId</label>
+        <input id="userId" formControlName="userId" type="text" class="form-control" />
+        <!-- Mensaje de error para userId -->
+        <div *ngIf="createFriendForm.get('userId')?.invalid && createFriendForm.get('userId')?.touched" class="error">
+          UserId es obligatorio.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="friendId">FriendId</label>
+        <input id="friendId" formControlName="friendId" type="text" class="form-control" />
+        <!-- Mensaje de error para friendId -->
+        <div *ngIf="createFriendForm.get('friendId')?.invalid && createFriendForm.get('friendId')?.touched" class="error">
+          FriendId es obligatorio.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input id="status" formControlName="status" type="text" class="form-control" />
+        <!-- Mensaje de error para status -->
+        <div *ngIf="createFriendForm.get('status')?.invalid && createFriendForm.get('status')?.touched" class="error">
+          Status es obligatorio.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="createFriendForm.invalid">Crear FriendReq</button>
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+    </form>
+  </div>

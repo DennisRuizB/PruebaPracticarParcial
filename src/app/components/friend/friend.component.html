@@ -1,0 +1,37 @@
+
+<button (click)="goHome()">Home</button>
+
+
+<h1>Friend List</h1>
+<table>
+  <thead>
+    <tr>
+      <th>RequestId</th>
+      <th>UserId</th>
+      <th>UserName</th>
+      <th>FriendId</th>
+      <th>FiendName</th>
+      <th>Status</th>
+      <th>CreationData</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let friend of friends">
+      <td>{{ friend._id }}</td>
+      <td>{{ friend.userId._id }}</td>
+      <td>{{ friend.userId.name }}</td>
+      <td>{{ friend.friendId._id }}</td>
+      <td>{{ friend.friendId.name }}</td>
+      <td> {{ friend.status }}</td>
+      <td> {{ friend.addedAt }} </td>
+      <td>
+        <button (click)="statusRequest(friend._id,'accepted')">Accept</button>
+        <button (click)="statusRequest(friend._id,'rejected')">Reject</button>
+        <button (click)="deleteRequest(friend._id)">Delete</button>
+    </td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="openCreateFriendModal()">CreateFriendRequest</button>

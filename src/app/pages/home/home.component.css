@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column; /* Cambia a column si no necesitas un diseño en filas */
+  width: 100%; /* Asegúrate de que ocupe todo el ancho */
+  
+}
+
+app-filter-search {
+  flex: 1;
+  margin-right: 20px;
+  align-self: stretch; /* Asegura que el buscador esté alineado en la parte superior */
+}
+
+app-table {
+  flex: 2;
+  align-self: stretch; /* Asegura que la tabla esté alineada en la parte superior */
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+  margin-top: 10px;
+}

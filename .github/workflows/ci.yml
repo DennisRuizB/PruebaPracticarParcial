@@ -1,0 +1,10 @@
+name: CI  # El nom del flux de treball
+on: [push]  # El flux de treball s'executa cada cop que algú fa un 'push' al repositori
+jobs:
+  build:  # Defineix una tasca anomenada 'build'
+    runs-on: ubuntu-latest  # La tasca s'executa en un entorn Ubuntu més recent
+    steps:  # Defineix els passos que s'executaran dins de la tasca
+      - uses: actions/checkout@v3  # Es fa un checkout del codi font del repositori
+      - run: npm install  # Instal·lar les dependències del projecte
+      - run: npm run lint  # S'executa el linter per verificar la qualitat del codi
+      - run: npm test  # S'executen les proves del projecte
